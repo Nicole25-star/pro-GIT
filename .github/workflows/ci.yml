@@ -1,0 +1,18 @@
+name: Integración Continua - CI
+
+on:
+  push:
+    branches: [main] # Ejecutar solo cuando se haga push a main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Utilizar entorno Linux para el build
+
+    steps:
+      - name: Obtener código del repositorio
+        uses: actions/checkout@v4 # Clonar el repositorio
+
+      - name: Validación simulada del código
+        run: |
+          echo "Iniciando validación de código..."
+          echo "Todo correcto. Validación simulada completada."
